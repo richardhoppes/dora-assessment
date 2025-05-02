@@ -1,0 +1,69 @@
+/* Loading Bar */
+.loading-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14rem; /* Adjust width as needed */
+  height: 4rem; /* Adjust height as needed */
+  background-color: #1e3a8a; /* Pixelated blue background */
+  border: 4px solid #2563eb; /* Bright blue border */
+  border-radius: 2rem; /* Oval shape */
+  box-shadow: 0 0 10px #2563eb; /* Glow effect */
+  overflow: hidden;
+  margin: 0 auto; /* Center horizontally */
+}
+
+/* Pac-Man */
+.pacman {
+  position: relative;
+  width: 2rem; /* Adjust size as needed */
+  height: 2rem;
+  background-color: #fcd34d; /* Yellow for Pac-Man */
+  border-radius: 50%; /* Make it a circle */
+  margin-right: 1rem; /* Space between Pac-Man and dots */
+  animation: pacman-chomp 0.5s infinite linear;
+}
+
+.pacman::before {
+  content: '';
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  background-color: black; /* Mouth color */
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  clip-path: polygon(50% 50%, 100% 0, 100% 100%);
+  animation: pacman-mouth 0.5s infinite linear;
+}
+
+@keyframes pacman-mouth {
+  0% {
+    clip-path: polygon(50% 50%, 100% 0, 100% 100%);
+  }
+  50% {
+    clip-path: polygon(50% 50%, 100% 50%, 100% 50%);
+  }
+  100% {
+    clip-path: polygon(50% 50%, 100% 0, 100% 100%);
+  }
+}
+
+/* Dots */
+.dots {
+  display: flex;
+  align-items: center;
+}
+
+.dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #f9fafb; /* White dots */
+  border-radius: 50%;
+  margin: 0 0.25rem;
+}
+
+.dot.eaten {
+  background-color: #1e3a8a; /* Match the background to simulate being eaten */
+}
