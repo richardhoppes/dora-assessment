@@ -46,7 +46,7 @@ export default function Results() {
 
     try {
       // Send data to n8n webhook
-      await fetch('https://cs-rich.app.n8n.cloud/webhook-test/a03163b6-b472-4d8e-b72a-a3f43e49b0d0', {
+      await fetch('https://cs-rich.app.n8n.cloud/webhook/a03163b6-b472-4d8e-b72a-a3f43e49b0d0', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
