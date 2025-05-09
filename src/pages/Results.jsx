@@ -10,6 +10,8 @@ export default function Results() {
   const [formData, setFormData] = useState({ name: '', email: '' });
   const [formSubmitted, setFormSubmitted] = useState(false);
 
+  const webhookUrl = process.env.REACT_APP_N8N_WEBHOOK_URL;
+
   let level = 'Elite';
   let explanation = 'You are performing exceptionally well!';
   let levelColor = 'text-green-500';
@@ -46,7 +48,7 @@ export default function Results() {
 
     try {
       // Send data to n8n webhook
-      await fetch('https://cs-rich.app.n8n.cloud/webhook/a03163b6-b472-4d8e-b72a-a3f43e49b0d0', {
+      await fetch(webhookUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
