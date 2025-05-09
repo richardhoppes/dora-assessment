@@ -88,7 +88,10 @@ export default function Results() {
       <div className="mt-8 p-6 bg-blue-800 border-4 border-blue-500 rounded-2xl shadow-lg text-center max-w-lg">
         {!formSubmitted ? (
           <>
-            <h2 className="text-2xl font-bold mb-4">Share Your Results</h2>
+            <h2 className="text-2xl font-bold mb-4">Learn More About Your Results</h2>
+            <p className="text-sm mb-4">
+              Submit this form and someone from Codingscape will contact you within 24 hours to discuss your results.
+            </p>
             <form onSubmit={handleSubmit}>
               <div className="mb-4">
                 <label className="block text-left mb-2">
